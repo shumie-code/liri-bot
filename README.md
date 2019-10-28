@@ -9,7 +9,7 @@ The LIRI bot will use modularization via the 'REQUIRE' method for axios packages
 _____________________________________________________
 The LIRI Bot will take the existing CLI inputs by the user and write the JSON response onto a separate .txt file. This will be done via the 'FS.READ & FS.WRITE' methods. The returning information will return in a string then seprated by 'DATA.SPLIT' element to be stored in an array that will output the information. The returning strings willl be appended to the .txt file using the 'FS.APPENDFILE' element.
 ______________________________________________________
-The LIRI bot will use package.json files to store & track the related node modules using 'AXIOS' node package. 'AXIOS' will worrk in conjuction with the 'REQUIRE' method to be called into the js file. Once availible the axios.get function will be called in order to take in URLs and return a promise, like an ajax call in javascript.
+The LIRI bot will use package.json files to store & track the related node modules using 'AXIOS' node package. 'AXIOS' will work in conjuction with the 'REQUIRE' method to be called into the js file. Once availible the axios.get function will be called in order to take in URLs and return a promise, like an ajax call in javascript.
 ______________________________________________________
 Technologies USED
 * NODE.JS
