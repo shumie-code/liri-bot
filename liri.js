@@ -130,24 +130,21 @@ function movie(reference) {
   if(reference.length === 0){
     reference = "mr nobody";
   }
-  axios.get('https://www.omdbapi.com/?t=' + reference + '&plot=short&apikey=trilogy').then(
+  axios.get('http://www.omdbapi.com/?t=' + reference + '&plot=short&apikey=trilogy').then(
     function (response) {
-      var rotten = response.data.Ratings[1]
-      if (rotten === undefined) { rotten = "Not available" }
-      else{ rotten = response.data.Rating[1].value;}
+
       console.log(" ");
       console.log("-------Movie--Info------"+response.data.title+"---------");
       console.log(" ");
 
       var movieResults =
-      "\n* Title: " + response.data.title +
-      "\n* Year: " + response.data.year +
-      "\n* OMDB Rating: " + response.data.rated +
-      "\n* Rotten Tomatoes Rating: " + rotten + 
-      "\n* Country: " + response.data.country +
-      "\n* Language: " + response.data.language +
-      "\n* Plot: " + response.data.plot +
-      "\n* Actors: " + response.data.actors +
+      "\n* Title: " + response.data.Title +
+      "\n* Year: " + response.data.Year +
+      "\n* OMDB Rating: " + response.data.Rated +
+      "\n* Country: " + response.data.Country +
+      "\n* Language: " + response.data.Language +
+      "\n* Plot: " + response.data.Plot +
+      "\n* Actors: " + response.data.Actors +
       "\n " + 
       "\n***************************** " +
       "\n ";
