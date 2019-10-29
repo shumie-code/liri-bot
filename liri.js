@@ -54,7 +54,7 @@ if (command === 'concert-this') {
 } else if (command === 'spotify-this-song') {
   spotifySong(reference);
 } else if (command === 'movie-this') {
-  theMovie(reference);
+  movie(reference);
 } else if (command === 'do-what-it-says') {
   doThat();
 }
@@ -125,4 +125,47 @@ function spotifySong(reference) {
 
 }
 
+//Movie-this Method 
+function movie(reference) {
+  if(reference.length === 0){
+    reference = "mr nobody";
+  }
+  axios.get('https://www.omdbapi.com/?t=' + reference + '&plot=short&apikey=trilogy').then(
+    function (response) {
+      var rotten = response.data.Ratings[1]
+      if (rotten === undefined) { rotten = "Not available" }
+      else{ rotten = response.data.Rating[1].value;}
+      console.log(" ");
+      console.log("-------Movie--Info------"+response.data.title+"---------");
+      console.log(" ");
+
+      var movieResults =
+      "\n* Title: " + response.data.title +
+      "\n* Year: " + response.data.year +
+      "\n* OMDB Rating: " + response.data.rated +
+      "\n* Rotten Tomatoes Rating: " + rotten + 
+      "\n* Country: " + response.data.country +
+      "\n* Language: " + response.data.language +
+      "\n* Plot: " + response.data.plot +
+      "\n* Actors: " + response.data.actors +
+      "\n " + 
+      "\n***************************** " +
+      "\n ";
+      console.log(movieResults);
+    })
+    .catch(function (error) {
+      console.log('Error: ' + error);
+    });
+
+}
+
+// Do what it says Method
+
+function doThat() {
+  fs.readFile("random.txt", "utf8", function(error, data) {
+    if (error) {
+      
+    }
+  })
+}
 
