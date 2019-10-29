@@ -164,7 +164,29 @@ function movie(reference) {
 function doThat() {
   fs.readFile("random.txt", "utf8", function(error, data) {
     if (error) {
-      
+      return console.log(error);
+    }
+    var dataArr = data.split(',');
+    console.log('')
+    console.log('----------ITEMS----QUERY----RESULTS---------')
+    console.log('')
+    for (var i = 0; i < dataArr.length; i++) {
+      if (dataArr[i] === 'spotify-this-song'){
+        theSong = dataArr[++i];
+        console.log('--------Searching------'+theSong+'-------')
+        spotifySong(theSong);
+
+      } else if (dataArr[i] === 'movie-this') {
+        theMovie = dataArr[i++];
+        console.log('-------WATCH-----'+theMovie+'--------')
+        movie(theMovie);
+      } else if (dataArr[i++] === 'concert-this'){
+        theBand = dataArr[i++];
+        console.log('--------LISTEN-LIVE-------'+theBand+'------')
+        concert(theBand);
+      } else { console.log("Command not valid");
+    }
+    
     }
   })
 }
