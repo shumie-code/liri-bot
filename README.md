@@ -17,14 +17,16 @@ Technologies USED
 * MOMENT.JS
 ______________________________________________________
 APIs' USED
-* SPOTIFY
-* OMDB
-* BandsInTown
+* SPOTIFY ""
+* OMDB ""
+* BandsInTown ""
 ______________________________________________________
-NPM PACKAGES USED
-* AXIOS
-* DOTENV
-* SIMPLE NODE LOGGER
+NPM PACKAGES USED 
+* AXIOS ""
+* DOTENV ""
+* SIMPLE NODE LOGGER ""
+* Moment.js ""
+* NODE-SPOTIFY-API ""
 ______________________________________________________
 LIRI BOT COMMANDS
 
