@@ -1,15 +1,22 @@
 require("dotenv").config();
+
+// Variable for "fs" to 
 var fs = require("fs");
+// Variable used for acess to spotify node api
 var Spotify = require('node-spotify-api');
+// Variable for Axios node package for ajax .get functionality
 var axios = require('axios');
+// variable for moment node package for time stamping 
 var moment = require('moment');
+// variable that holds client secret and access keys
 var keys = require('./keys.js');
+// variable for acessing spotify client and secret keys
 var spotify = new Spotify(keys.spotify);
+
 var command = process.argv[2];
 var arg = process.argv;
 var refrence = [];
 var theSong = '';
-var theMovie = '';
 var theBand = '';
 var fileName = 'log.txt';
 var fullCommand = [];
@@ -37,4 +44,16 @@ function log(value){
 
 log(fullCommand);
 
-// Command statements for BandInTown, Spotify, and OMDB
+// Command statements for BandInTown, Spotify, and OMDB, do-what-it-says
+
+if (command === 'concert-this') {
+  concert(refrenceBand);
+} else if (command === 'spotify-this-song') {
+  spotifySong(refrence);
+} else if (command === 'movie-this') {
+  theMovie(refrence);
+} else if (command === 'do-what-it-says') {
+  doThat();
+}
+
+
