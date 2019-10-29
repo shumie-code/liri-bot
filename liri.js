@@ -17,7 +17,7 @@ var command = process.argv[2];
 var arg = process.argv;
 var refrence = [];
 var theSong = '';
-var theBand = '';
+var theArtist = '';
 var fileName = 'log.txt';
 var fullCommand = [];
 
@@ -26,12 +26,12 @@ for (var i = 3; i < arg.length; i++) {
   refrence.push(arg[i])
 }
 
-var refrenceBand = refrence.join("");
+var refrenceArtist = refrence.join("");
 
 // fullCommand logs commands to to log.txt file after command input
 fullCommand.push(command);
 if(refrence.length != 0){
-  fullCommand.push(refrenceBand);
+  fullCommand.push(refrenceArtist);
 }
 
 
@@ -47,7 +47,7 @@ log(fullCommand);
 // Command statements for BandInTown, Spotify, and OMDB, do-what-it-says
 
 if (command === 'concert-this') {
-  concert(refrenceBand);
+  concert(refrenceArtist);
 } else if (command === 'spotify-this-song') {
   spotifySong(refrence);
 } else if (command === 'movie-this') {
@@ -57,12 +57,12 @@ if (command === 'concert-this') {
 }
 
 //concert-this function
-function concert(refrenceBand) {
-  var bandURL = "https://rest.bandsintown.com/artist/" + refrenceBand + "/events?app_id=trilogy";
-  axios.get(bandURL).then(
+function concert(artist) {
+  var artistURL = "https://rest.bandsintown.com/artist/" + artist + "/events?app_id=codingbootcamp";
+  axios.get(artistURL).then(
     function (response) {
       console.log(" ");
-      console.log("Band/Artist/info: " +refrenceBand+ "***");
+      console.log("Band/Artist/info: " + artist + "***");
       for (var i = 0; i < response.data.length; i ++) {
 
         // Places datetime as a varible
@@ -70,12 +70,12 @@ function concert(refrenceBand) {
         // Splits the date and time in the response
         var dateArray = datetime.split('T');
 
-        var concertResults =
+        var artistResults =
         "------------------------------------------------" +
         "\nVenue Name: " + response.data[i].venue.name +
         "\nVenue Location: " + response.data[i].venue.city +
         "\nDate of the Event: " + moment(dateArr[0], "YYYY-DD-MM").format('DD/MM/YYYY');
-        console.log(concertResults);
+        console.log(artistResults);
       } console.log("  ");
       console.log("******************************* ");
       console.log(" ");
