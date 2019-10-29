@@ -61,12 +61,12 @@ if (command === 'concert-this') {
 
 //concert-this function
 function concert(referenceBand) {
-  var bandURL = "https://rest.bandsintown.com/artist/" + referenceBand + "/events?app_id=codingbootcamp";
+  var bandURL = "http://rest.bandsintown.com/artists/" + referenceBand + "/events?app_id=trilogy";
   axios.get(bandURL).then(
     function (response) {
       console.log("  ");
       console.log("-------Artist Items-----: " + referenceBand + "------");
-      for (var i = 0; i < response.data.length; i ++) {
+      for (var i = 0; i < response.data.length; i++) {
 
         // Places datetime as a varible
         var datetime = response.data[i].datetime;
