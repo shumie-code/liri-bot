@@ -56,4 +56,32 @@ if (command === 'concert-this') {
   doThat();
 }
 
+//concert-this function
+function concert(refrenceBand) {
+  var bandURL = "https://rest.bandsintown.com/artist/" + refrenceBand + "/events?app_id=trilogy";
+  axios.get(bandURL).then(
+    function (response) {
+      console.log(" ");
+      console.log("Band/Artist/info: " +refrenceBand+ "***");
+      for (var i = 0; i < response.data.length; i ++) {
 
+        // Places datetime as a varible
+        var datetime = response.data[i].datetime;
+        // Splits the date and time in the response
+        var dateArray = datetime.split('T');
+
+        var concertResults =
+        "------------------------------------------------" +
+        "\nVenue Name: " + response.data[i].venue.name +
+        "\nVenue Location: " + response.data[i].venue.city +
+        "\nDate of the Event: " + moment(dateArr[0], "YYYY-DD-MM").format('DD/MM/YYYY');
+        console.log(concertResults);
+      } console.log("  ");
+      console.log("******************************* ");
+      console.log(" ");
+    })
+    .catch(function (err) {
+      console.log('This is the err: ' + error); 
+    });
+  
+}
