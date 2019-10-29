@@ -104,7 +104,7 @@ function spotifySong(reference) {
       var spotifyResults =
       "--------------------" +
       //Artist Name
-      "\nArtist(s): " + response.tracks.items[i].artist[0].name + 
+      "\nArtist(s): " + response.tracks.items[i].artists[0].name + 
       // Song name
       "\nSong Name: " + response.tracks.items[i].name +
       // Album Name
