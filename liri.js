@@ -19,7 +19,7 @@ var theSong = '';
 var theMovie = '';
 var theBand = '';
 var fileName = 'log.txt';
-var fullCommand = [];
+var fC = [];
 
 // For multiple user input
 for (var i = 3; i < arg.length; i++) {
@@ -29,10 +29,10 @@ for (var i = 3; i < arg.length; i++) {
 var referenceBand = reference.join("");
 
 
-// fullCommand logs commands to to log.txt file after command input
-fullCommand.push(command);
+// fc logs commands to to log.txt file after command input
+fC.push(command);
 if(reference.length != 0){
-  fullCommand.push(referenceBand);
+  fC.push(referenceBand);
 }
 
 
@@ -45,7 +45,7 @@ function logging(value){
   })
 }
 
-logging(fullCommand);
+logging(fC);
 
 // Command statements for BandInTown, Spotify, and OMDB, do-what-it-says
 
