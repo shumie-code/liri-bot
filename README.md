@@ -45,3 +45,4 @@ TO DEPLOY
 
 https://github.com/shumie-code/liri-bot/blob/master/screenshots/liri1.png
 https://github.com/shumie-code/liri-bot/blob/master/screenshots/liri2.png
+https://github.com/shumie-code/liri-bot/blob/master/screenshots/liri3.png
