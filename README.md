@@ -43,3 +43,4 @@ TO DEPLOY
 * RUN NPM INSTALL
 * COMMAND PROMPT node liri-js ' liri bot commands here '
 
+https://github.com/shumie-code/liri-bot/blob/master/screenshots/liri1.png
